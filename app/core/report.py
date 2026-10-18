@@ -98,12 +98,12 @@ def draw_background(canvas, doc):
     canvas.setFont("Helvetica", 8)
     canvas.setFillColor(TEXT2)
     canvas.drawRightString(W - 15*mm, H - 12*mm,
-        f"CONFIDENTIEL · {datetime.now().strftime('%d/%m/%Y %H:%M')} UTC")
+        f"DONNÉES FICTIVES DE DÉMONSTRATION · {datetime.now().strftime('%d/%m/%Y %H:%M')} UTC")
     # Footer
     canvas.setFont("Helvetica", 7)
     canvas.setFillColor(TEXT2)
     canvas.drawCentredString(W/2, 4*mm,
-        f"LNX Vision Platform · Document généré automatiquement · Page {doc.page}")
+        f"LNX Vision · Document généré automatiquement à partir de données fictives · Page {doc.page}")
     canvas.restoreState()
 
 # ── RAPPORT ENTITÉ ────────────────────────────────────────────────────────────
@@ -300,9 +300,9 @@ def generate_global_report() -> bytes:
     story.append(Spacer(1, 6*mm))
     story.append(Paragraph("RAPPORT D'ANALYSE GLOBAL", s["subtitle"]))
     story.append(Spacer(1, 2*mm))
-    story.append(Paragraph("NEXUS — Vue d'ensemble du reseau", s["title"]))
+    story.append(Paragraph("LNX Vision — Vue d'ensemble du réseau", s["title"]))
     story.append(Spacer(1, 3*mm))
-    story.append(Paragraph(f"Genere le {now} UTC · {len(entities)} entites · {G.number_of_edges()} liens", s["subtitle"]))
+    story.append(Paragraph(f"Généré le {now} UTC · {len(entities)} entités · {G.number_of_edges()} liens", s["subtitle"]))
     story.append(Spacer(1, 4*mm))
     story.append(HRFlowable(width="100%", thickness=0.5, color=DARK3, spaceAfter=10))
 
