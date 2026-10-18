@@ -1,52 +1,54 @@
+[English](README.md) | [Français](README.fr.md)
+
 # LNX Vision
 
-Plateforme d'analyse de réseaux d'entités : une API FastAPI construit un graphe à partir de données tabulaires, et une interface web (HTML) permet de l'explorer (graphe, carte, alertes, statistiques) et d'exporter des rapports PDF.
+Entity network analysis platform: a FastAPI backend builds a graph from tabular data, and a web interface (HTML) lets you explore it (graph, map, alerts, statistics) and export PDF reports.
 
-## Fonctionnalités
+## Features
 
-- Graphe interactif des entités et de leurs relations (vues force, radiale, groupes, analyse)
-- Recherche d'entités, fiche détaillée, score de risque, connexions directes
-- Recherche de chemin entre deux entités
-- Carte, alertes et statistiques
-- Export PDF d'une entité et rapport global
+- Interactive graph of entities and their relationships (force, radial, groups and analysis views)
+- Entity search, detail panel, risk score, direct connections
+- Path finding between two entities
+- Map, alerts and statistics
+- PDF export for a single entity and a global report
 
-## Avertissement sur les données
+## Notice on the data
 
-Les entités, noms, relations, scores de risque et alertes de `app/data/entities.xlsx` sont **entièrement fictifs** : noms inventés, villes et événements génériques, relations attribuées au hasard. Cette base de démonstration a été générée avec l'aide de Claude (Anthropic) pour tester l'application. Toute ressemblance avec des personnes, organisations ou événements réels serait fortuite, et ces données ne doivent pas être interprétées comme des informations sur des personnes réelles.
+The entities, names, relationships, risk scores and alerts in `app/data/entities.xlsx` are **entirely fictitious**: invented names, generic cities and events, randomly assigned relationships. This demo dataset was generated with the help of Claude (Anthropic) to test the application. Any resemblance to real people, organizations or events would be coincidental, and this data must not be interpreted as information about real persons.
 
-Les données ICIJ (Offshore Leaks), elles, sont réelles et soumises aux conditions d'utilisation de l'ICIJ (voir plus bas). Elles ne sont pas incluses dans ce dépôt.
+The ICIJ data (Offshore Leaks), on the other hand, is real and subject to the ICIJ's terms of use (see below). It is not included in this repository.
 
-## Avertissement sur l'utilisation de données réelles
+## Notice on the use of real data
 
-Les scores de risque et les statuts (« Critique », « Prioritaire », « Suivi », « Analyse », « Veille » dans la base de démonstration ; « Critique », « Surveillance », « Enquête », « Intérêt » dans la conversion ICIJ) sont des indicateurs **structurels** : pour les données ICIJ, ils reposent uniquement sur le nombre de connexions d'une entité dans le graphe. Ils ne constituent ni une évaluation de dangerosité, ni une accusation, ni une preuve d'infraction.
+Risk scores and statuses ("Critique", "Prioritaire", "Suivi", "Analyse", "Veille" in the demo dataset; "Critique", "Surveillance", "Enquete", "Interet" in the ICIJ conversion) are **structural** indicators: for ICIJ data, they are based solely on the number of connections an entity has in the graph. They are not an assessment of dangerousness, an accusation, or evidence of wrongdoing.
 
-Appliqués à des données réelles (par exemple celles de l'ICIJ converties avec `icij_to_nexus.py`), ils ne doivent pas servir à désigner, accuser ou profiler des personnes ou des organisations. L'ICIJ rappelle que figurer dans ses bases ne suppose aucune faute.
+When applied to real data (for example ICIJ data converted with `icij_to_nexus.py`), they must not be used to single out, accuse or profile people or organizations. The ICIJ reminds users that appearing in its databases does not imply any wrongdoing.
 
-L'utilisateur est seul responsable de l'usage qu'il fait de l'outil et des données qu'il y charge, dans le respect du droit applicable (RGPD, diffamation, conditions d'utilisation des sources). L'auteur décline toute responsabilité à ce sujet.
+The user is solely responsible for how they use the tool and for the data they load into it, in compliance with applicable law (GDPR, defamation, terms of use of data sources). The author disclaims all liability in this respect.
 
-## Structure du projet
+## Project structure
 
 ```
 LNX_Vision_V1/
 ├── app/
-│   ├── main.py            # Point d'entrée FastAPI (routes sous /api)
-│   ├── api/routes.py      # Routes de l'API
-│   ├── core/              # Construction du graphe, analyse, rapports PDF
-│   └── data/entities.xlsx # Données d'entités (fictives)
-├── frontend/              # Application frontend Python
-├── lnx_vision.html        # Interface principale
-├── lnx_intel.html         # Interface complémentaire
-├── icij_to_nexus.py       # Conversion des données ICIJ
-├── add_coordinates.py     # Ajout de coordonnées approximatives (par pays) pour la carte
-├── launch_lnx.bat         # Lancement rapide sous Windows
-├── LANCEMENT.txt          # Notes de lancement
-└── requirements.txt       # Dépendances Python
+│   ├── main.py            # FastAPI entry point (routes under /api)
+│   ├── api/routes.py      # API routes
+│   ├── core/              # Graph building, analysis, PDF reports
+│   └── data/entities.xlsx # Entity data (fictitious)
+├── frontend/              # Python frontend application
+├── lnx_vision.html        # Main interface
+├── lnx_intel.html         # Complementary interface
+├── icij_to_nexus.py       # ICIJ data conversion
+├── add_coordinates.py     # Adds approximate coordinates (by country) for the map
+├── launch_lnx.bat         # Quick launcher for Windows
+├── LANCEMENT.txt          # Launch notes (French)
+└── requirements.txt       # Python dependencies
 ```
 
-## Prérequis
+## Requirements
 
 - Python 3.10
-- Windows (le script `launch_lnx.bat` est prévu pour Windows ; le reste fonctionne ailleurs)
+- Windows (`launch_lnx.bat` targets Windows; the rest works elsewhere)
 
 ## Installation
 
@@ -58,37 +60,37 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Données ICIJ
+## ICIJ data
 
-Le dossier `icij/` n'est pas versionné (fichiers trop volumineux). Pour l'utiliser :
+The `icij/` folder is not versioned (files too large). To use it:
 
-1. Télécharger le jeu de données Offshore Leaks sur le site de l'ICIJ, en respectant ses conditions d'utilisation et de licence (attribution à l'ICIJ). Figurer dans cette base n'implique aucune infraction de la part d'une personne ou d'une société.
-2. Placer les fichiers CSV (`nodes-*.csv`, `relationships.csv`) dans un dossier `icij/` à la racine du projet.
+1. Download the Offshore Leaks dataset from the ICIJ website, respecting its terms of use and license (attribution to the ICIJ). Appearing in this database does not imply any wrongdoing by a person or company.
+2. Place the CSV files (`nodes-*.csv`, `relationships.csv`) in an `icij/` folder at the project root.
 
-## Lancement
+## Running
 
-1. Démarrer l'API, avec l'environnement virtuel activé :
+1. Start the API with the virtual environment activated:
 
 ```powershell
 uvicorn app.main:app --reload
 ```
 
-L'API est disponible sur `http://127.0.0.1:8000` et sa documentation interactive sur `http://127.0.0.1:8000/docs`.
+The API is available at `http://127.0.0.1:8000` and its interactive documentation at `http://127.0.0.1:8000/docs`.
 
-2. Ouvrir `lnx_vision.html` dans un navigateur (double-clic sur le fichier). L'API doit rester lancée pendant l'utilisation, dans son propre terminal.
+2. Open `lnx_vision.html` in a browser (double-click the file). The API must stay running in its own terminal while you use the interface.
 
-L'onglet **CARTE** nécessite une connexion Internet pour charger le fond de carte (tuiles sombres d'Esri).
+The **CARTE** (map) tab requires an Internet connection to load the base map (Esri dark tiles).
 
-## Dépannage
+## Troubleshooting
 
-- **« Impossible de joindre l'API / Failed to fetch »** : l'API n'est pas lancée (relancer `uvicorn app.main:app --reload` dans un terminal dédié et le laisser ouvert), ou une route renvoie une erreur (voir le terminal d'uvicorn).
-- **Le fond de la carte est gris ou en erreur** : vérifier la connexion Internet. Le fond est chargé depuis les serveurs d'Esri ; certains fournisseurs de tuiles (OpenStreetMap, CARTO) refusent les pages ouvertes depuis un fichier local ou exigent une clé.
-- **Une dépendance manque (`openpyxl`, `reportlab`…)** : activer le venv puis `pip install -r requirements.txt`.
-- **`ModuleNotFoundError`** : l'environnement virtuel n'est pas activé ou les dépendances ne sont pas installées (`pip install -r requirements.txt`).
-- **Un venv copié ou déplacé ne fonctionne plus** : le supprimer et le recréer à son emplacement actuel.
+- **"Impossible de joindre l'API / Failed to fetch"**: the API is not running (restart `uvicorn app.main:app --reload` in a dedicated terminal and leave it open), or a route returns an error (check the uvicorn terminal).
+- **The map background is gray or shows an error**: check your Internet connection. The base map is loaded from Esri servers; some tile providers (OpenStreetMap, CARTO) refuse pages opened from a local file or require a key.
+- **A dependency is missing (`openpyxl`, `reportlab`...)**: activate the venv, then run `pip install -r requirements.txt`.
+- **`ModuleNotFoundError`**: the virtual environment is not activated or dependencies are not installed (`pip install -r requirements.txt`).
+- **A copied or moved venv no longer works**: delete it and recreate it at its current location.
 
-## Licence
+## License
 
-© 2026 Alexandre Martin. Tous droits réservés.
+© 2026 Alexandre Martin. All rights reserved.
 
-Ce code ne peut être copié, modifié, redistribué ni utilisé à des fins commerciales sans l'autorisation écrite de l'auteur. Il est fourni tel quel, sans garantie d'aucune sorte.
+This code may not be copied, modified, redistributed or used for commercial purposes without the author's written permission. It is provided as is, without warranty of any kind.
