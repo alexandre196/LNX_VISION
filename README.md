@@ -12,6 +12,38 @@ Entity network analysis platform: a FastAPI backend builds a graph from tabular 
 - Map, alerts and statistics
 - PDF export for a single entity and a global report
 
+## Screenshots
+
+Demo data only (fictitious).
+
+**Interactive graph with entity detail panel**
+
+![Interactive graph with entity detail panel](docs/graph.png)
+
+**Group and community analysis view**
+
+![Group and community analysis view](docs/groups.png)
+
+**Map of entities and links**
+
+![Map of entities and links](docs/map.png)
+
+**Alerts above a risk threshold**
+
+![Alerts above a risk threshold](docs/alerts.png)
+
+**Network statistics**
+
+![Network statistics](docs/stats.png)
+
+**PDF report for one entity**
+
+![PDF report for one entity](docs/report-entity.png)
+
+**Global PDF report**
+
+![Global PDF report](docs/report-global.png)
+
 ## Notice on the data
 
 The entities, names, relationships, risk scores and alerts in `app/data/entities.xlsx` are **entirely fictitious**: invented names, generic cities and events, randomly assigned relationships. This demo dataset was generated with the help of Claude (Anthropic) to test the application. Any resemblance to real people, organizations or events would be coincidental, and this data must not be interpreted as information about real persons.

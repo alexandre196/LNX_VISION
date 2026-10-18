@@ -12,6 +12,38 @@ Plateforme d'analyse de réseaux d'entités : une API FastAPI construit un graph
 - Carte, alertes et statistiques
 - Export PDF d'une entité et rapport global
 
+## Aperçu
+
+Données de démonstration uniquement (fictives).
+
+**Graphe interactif avec fiche entité**
+
+![Graphe interactif avec fiche entité](docs/graph.png)
+
+**Vue groupes et analyse des communautés**
+
+![Vue groupes et analyse des communautés](docs/groups.png)
+
+**Carte des entités et des liens**
+
+![Carte des entités et des liens](docs/map.png)
+
+**Alertes au-dessus d'un seuil de risque**
+
+![Alertes au-dessus d'un seuil de risque](docs/alerts.png)
+
+**Statistiques du réseau**
+
+![Statistiques du réseau](docs/stats.png)
+
+**Rapport PDF d'une entité**
+
+![Rapport PDF d'une entité](docs/report-entity.png)
+
+**Rapport PDF global**
+
+![Rapport PDF global](docs/report-global.png)
+
 ## Avertissement sur les données
 
 Les entités, noms, relations, scores de risque et alertes de `app/data/entities.xlsx` sont **entièrement fictifs** : noms inventés, villes et événements génériques, relations attribuées au hasard. Cette base de démonstration a été générée avec l'aide de Claude (Anthropic) pour tester l'application. Toute ressemblance avec des personnes, organisations ou événements réels serait fortuite, et ces données ne doivent pas être interprétées comme des informations sur des personnes réelles.
