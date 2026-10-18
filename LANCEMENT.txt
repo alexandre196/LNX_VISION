@@ -1,0 +1,6 @@
+uvicorn app.main:app --reload
+Ouvrir le HTML
+
+Exemple : ABD01 / AMI18
+
+

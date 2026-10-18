@@ -1,0 +1,9 @@
+venv/
+venv_old/
+__pycache__/
+*.pyc
+.env
+icij/
+desktop.ini
+~$*
+app/data/E9E1C200
